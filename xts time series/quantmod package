@@ -1,0 +1,14 @@
+# When you have xts file
+
+library(quantmod)
+  sbi <- getSymbols("SBIN.BO", src="yahoo",auto.assign = F)
+  rel <- getSymbols("RELIANCE.NS", src="yahoo",auto.assign = F)
+  infy <- getSymbols("INFY.NS", src="yahoo",auto.assign = F)
+
+  
+  
+library(highcharter)
+   highchart(type = "stock")  %>% 
+   hc_add_series(sbi) %>% 
+   hc_add_series(rel) %>% 
+   hc_add_series(infy) %>% hc_title(text = "infy/sbi/rel")
